@@ -1,0 +1,657 @@
+<!-- Case study site for my final thesis project in the Interaction Design Studies 2 & Computation Studio classes in the Honours Bachelor of Interaction Design, Winter 2023 semester -->
+
+<!-- HTML & CSS template sourced from W3Schools -->
+
+<!-- Made by Arash Nouri, April 2023 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>IXDS 2 / Project 4</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Martian+Mono">
+  <style>
+    @font-face {
+      font-family: 'Martian Mono';
+      src: url("fonts/MartianMono-VariableFont_wdth\,wght.ttf") format("truetype");
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Martian Mono", monospace
+    }
+
+    body {
+      font-size: 16px;
+    }
+
+    .w3-half img {
+      margin-bottom: 16px;
+      margin-top: 16px;
+      opacity: 0.8;
+      cursor: pointer;
+      transition: 0.5s;
+      transition-timing-function: ease;
+    }
+
+    .w3-half img:hover {
+      opacity: 1;
+      transition: 0.5s;
+      transition-timing-function: ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:240px;font-weight:bold;"
+    id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+      style="width:100%;font-size:22px">Close Menu</a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>Arash Nouri<br>IxD</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#Product" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Product</a>
+      <a href="#Project Statement" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Project
+        Statement</a>
+      <a href="#Process" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Process</a>
+      <a href="#Inspiration" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Inspiration</a>
+      <a href="#Collaboration" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Collaboration</a>
+      <a href="#Research" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Research</a>
+      <a href="#User Definition" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">User Definition</a>
+      <a href="#Co-creation" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Co-creation</a>
+      <a href="#Visual Identity" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Visual Identity</a>
+      <a href="#Function" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Function</a>
+      <a href="#Prototyping" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Prototyping</a>
+      <a href="#User Testing" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">User Testing</a>
+      <a href="#Wizard of Oz" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Wizard of Oz</a>
+      <a href="#Analysis" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"
+        style="margin-left: 1em;">Analysis</a>
+      <a href="#Reflection" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Reflection</a>
+      <a href="#Appendix" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Appendix</a>
+      <!--        <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-bar-item w3-button w3-hover-white" id="myBtn">Jeans +</a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-hover-white">Skinny</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-white">Relaxed</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-white">Bootcut</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-white">Straight</a>
+    </div> -->
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+    <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+    <span>Arash Nouri</span>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="Product">
+      <h1 class="w3-jumbo"><b>Interaction Design Studies 2</b></h1>
+      <h1 class="w3-xxxlarge w3-text-red"><b>Product</b></h1>
+      <!--       <hr style="width:180px;border:5px solid #388E3C" class="w3-round"> -->
+    </div>
+
+    <h1>Introducing <span class="highlight">Aimware</span>🦯</h1>
+    <h2>Aimware is a series of modular smart accessories that extend the functionality of mobility canes according to
+      the user's needs</h2>
+
+    <!-- Photo grid (modal) -->
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <img src="/images/blender/cane_v3_1.jpg" style="width:100%" onclick="onClick(this)" alt="">
+        <h7></h7>
+        <img src="/images/blender/cane_v3_3.jpg" style="width:100%" onclick="onClick(this)" alt="">
+        <h7></h7>
+        <img src="/images/blender/cane_v3_5.jpg" style="width:100%" onclick="onClick(this)" alt="">
+        <h7></h7>
+      </div>
+
+      <div class="w3-half">
+        <img src="/images/blender/cane_v3_2.jpg" style="width:100%" onclick="onClick(this)" alt="">
+        <h7></h7>
+        <img src="/images/blender/cane_v3_4.jpg" style="width:100%" onclick="onClick(this)" alt="">
+        <h7></h7>
+      </div>
+    </div>
+
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption"></p>
+      </div>
+    </div>
+
+    <!-- Project Statement -->
+    <div class="w3-container" id="Project Statement" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Project Statement</b></h1>
+      <!--       <hr style="width:260px;border:5px solid #388E3C" class="w3-round"> -->
+      <p>I am designing a modular system of devices <span class="highlight">[form]</span> that will enable
+        visually-impaired people <span class="highlight">[users]</span> to confidently navigate the ever-changing world
+        around them. By augmenting the function of their canes to process more information as they see fit <span
+          class="highlight">[function]</span>, they will be able to gain a more in-depth understanding of their
+        surroundings and overcome barriers that impede their quality of life <span class="highlight">[purpose]</span>.
+      </p>
+    </div>
+
+    <!-- Process -->
+    <div class="w3-container" id="Process" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Process</b></h1>
+      <!--       <hr style="width:220px;border:5px solid #388E3C" class="w3-round"> -->
+      <h4>The A–Z of how this project came to life</h4>
+      <div class="w3-container" id="Inspiration" style="margin-top:75px">
+        <h1 class="w3-xxlarge w3-text-red"><b>Inspiration</b></h1>
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="/images/microsoft-adaptive-accessories.jpg" style="width:100%" onclick="onClick(this)"
+              alt="Microsoft Adaptive Accessories, one of the main inspirations behind this project">
+            <h7>Microsoft Adaptive Accessories, one of the main inspirations behind this project</h7>
+            <img src="/images/surface-adaptive-kit_2.jpg" style="width:100%" onclick="onClick(this)"
+              alt="The Surface Adaptive Kit, another accessibility initiative from Microsoft">
+            <h7>The Surface Adaptive Kit, another accessibility initiative from Microsoft</h7>
+            <img src="/images/project-ara.webp" style="width:100%" onclick="onClick(this)"
+              alt="Project Ara, a modular smartphone project from Google">
+            <h7>Project Ara, a modular smartphone project from Google</h7>
+            <img src="/images/cane-types.jpg" style="width:100%" onclick="onClick(this)"
+              alt="A example of the variety of mobility canes suited for different use cases">
+            <h7>A example of the variety of mobility canes suited for different use cases</h7>
+          </div>
+
+          <div class="w3-half">
+            <img src="/images/surface-adaptive-kit.png" style="width:100%" onclick="onClick(this)"
+              alt="The Surface Adaptive Kit, another accessibility initiative from Microsoft">
+            <h7>The Surface Adaptive Kit, another accessibility initiative from Microsoft</h7>
+            <img src="/images/framework.webp" style="width:100%" onclick="onClick(this)"
+              alt="The Framework laptop, a recent & successful attempt at creating a modular laptop system to reduce e-waste and support DIY culture">
+            <h7>The Framework laptop, a recent & successful attempt at creating a modular laptop system to reduce
+              e-waste and foster DIY culture</h7>
+            <img src="/images/cane-tips.jpg" style="width:100%" onclick="onClick(this)"
+              alt="An example of the different types of cane tips can be used with standard mobility canes, this DIY aspect of existing assistive devices played in a big role in the direction of this project">
+            <h7>An example of the different types of cane tips can be used with standard mobility canes, this DIY aspect
+              of existing assistive devices played in a big role in the direction of this project</h7>
+          </div>
+        </div>
+
+      </div>
+      <div class="w3-container" id="Collaboration" style="margin-top:75px">
+        <h1 class="w3-xxlarge w3-text-red"><b>Collaboration</b></h1>
+        <p>From the beginning of IXDS 2 I set out to talk to some of my old professors again to see if they could help
+          out with aspects of the project that were out of my comfort zone, like physical computing and 3D printing.
+          This would eventually evolve into a full-fledge collaboration with multiple IXD profs with varying areas of
+          expertise. I even managed to break out of IXD and collaborate with Scot Laughton, the program co-ordinator of
+          Industrial Design.</p>
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="/images/thesis-collaborators.png" style="width:100%" onclick="onClick(this)"
+              alt="Map of all the collaborators I consulted throughout my thesis">
+            <h7>Map of all the collaborators I consulted throughout my thesis</h7>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-container" id="User Definition" style="margin-top:75px">
+        <h1 class="w3-xxlarge w3-text-red"><b>User Definition</b></h1>
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="/images/geordi-persona.png" style="width:100%" onclick="onClick(this)"
+              alt="Primary audience: people who've been living with vision impairment for all or most of their lives and have adapted to it">
+            <h7>Primary audience: people who've been living with vision impairment for all or most of their lives and
+              have adapted to it</h7>
+          </div>
+
+          <div class="w3-half">
+            <img src="/images/arya-persona.png" style="width:100%" onclick="onClick(this)"
+              alt="Secondary audience: people who are temporarily dealing with vision impairment due to illness or injury and have not had time to adapt to it">
+            <h7>Secondary audience: people who are temporarily dealing with vision impairment due to illness or injury
+              and have not had time to adapt to it</h7>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-container" id="Co-creation" style="margin-top:75px">
+        <h1 class="w3-xxlarge w3-text-red"><b>Co-creation</b></h1>
+        <p>After spending some time researching users and the problem space further, I realized that this wouldn't be
+          enough for a project of this type.</p>
+        <p>I needed to consult real people and ideally involve them in the design process instead of just consulting
+          them from time to time. This is how I met my primary collaborator, R.M. He is part of the primary audience
+          that I identified and knowledgeable about the types of assistive devices that already exist. <span
+            class="highlight">An ideal candidate.</span></p>
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="/images/user-ability.png" style="width:100%" onclick="onClick(this)"
+              alt="People want solutions that are designed with them, not for them. This is difficult to pull off because it's often rare to find experienced designers who have first-hand experience with the problem space">
+            <h7>People want solutions that are designed with them, not for them. This is difficult to pull off because
+              it's often rare to find experienced designers who have first-hand experience with the problem space</h7>
+          </div>
+
+          <div class="w3-half">
+            <img src="/images/venn-diagram.png" style="width:100%" onclick="onClick(this)"
+              alt="Co-creation solves this problem and is enabled through in-depth collaboration between these two audiences">
+            <h7>Co-creation solves this problem and is enabled through in-depth collaboration between these two
+              audiences</h7>
+          </div>
+        </div>
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="/images/prototype1.jpg" style="width:100%" onclick="onClick(this)"
+              alt="Prototype 1: a cap fitted with a proximity sensor and haptic to alert the user of incoming branches and other obstacles that they might bump their head on">
+            <h7>Prototype 1: a cap fitted with a proximity sensor and haptic to alert the user of incoming branches and
+              other obstacles that they might bump their head on</h7>
+            <img src="/images/prototype3.jpg" style="width:100%" onclick="onClick(this)"
+              alt="Prototype 3: an OS-wide digital assistance with a focus on accessibility, enabling users to ">
+            <h7>Prototype 3: an OS-wide proactive digital assistant with a focus on accessibility, enabling users to
+              interact with their devices in a multitude of ways</h7>
+          </div>
+
+          <div class="w3-half">
+            <img src="/images/prototype2.jpg" style="width:100%" onclick="onClick(this)"
+              alt="Prototype 2: the basis for the final product, a smart cane with configurable modules that would extend the function of the cane in many ways">
+            <h7>Prototype 2: the basis for the final product, a smart cane with configurable modules that would extend
+              the function of the cane in many ways</h7>
+            <img src="/images/prototype4.jpg" style="width:100%" onclick="onClick(this)"
+              alt="Prototype 4: a body cam that would constantly scan the user's environment and relay contextual information back in order to supplement their existing mobility aids">
+            <h7>Prototype 4: a body cam that would constantly scan the user's environment and relay contextual
+              information back in order to supplement their existing mobility aids</h7>
+          </div>
+        </div>
+
+      </div>
+      <div class="w3-container" id="Visual Identity" style="margin-top:75px">
+        <h1 class="w3-xxlarge w3-text-red"><b>Visual Identity</b></h1>
+      </div>
+
+      <!-- Photo grid (modal) -->
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <img src="/images/visual-identity.png" style="width:100%" onclick="onClick(this)"
+            alt="The name finalists along with the Aimware logo in the selected colour palette that's also used in the physical product">
+          <h7>The name finalists along with the Aimware logo in the selected colour palette that's also used in the
+            physical product</h7>
+          <img src="/images/curated-moodboards.png" style="width:100%" onclick="onClick(this)"
+            alt="Curated moodboards of inspirational material covering everthing from materials to colour, motion, and user interface. They've been grouped according to how they're related to each other, what design philosophy they follow, if they're real/speculate, etc.">
+          <h7>Curated moodboards of inspirational material covering everthing from materials to colour, motion, and user
+            interface. They've been grouped according to how they're related to each other, what design philosophy they
+            follow, if they're real/speculate, etc.</h7>
+        </div>
+
+        <div class="w3-half">
+          <img src="/images/ixds2-branding.png" style="width:100%" onclick="onClick(this)"
+            alt="Research & exploration into existing & speculative products either within the same problem space or in the periphery. These sources would inform the direction of the industrial design of the product as well as the overall visual identity that would go along with it on marketing materials.">
+          <h7>Research & exploration into existing & speculative products either within the same problem space or in the
+            periphery. These sources would inform the direction of the industrial design of the product as well as the
+            overall visual identity that would go along with it on marketing materials.</h7>
+        </div>
+      </div>
+
+      <div class="w3-container" id="Function" style="margin-top:75px">
+        <h1 class="w3-xxlarge w3-text-red"><b>Function</b></h1>
+      </div>
+
+      <!-- Photo grid (modal) -->
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <img src="/images/system-map.png" style="width:100%" onclick="onClick(this)"
+            alt="A system map proposing how Aimware modules would function and be fabricated">
+          <h7>A system map proposing how Aimware modules would function and be fabricated</h7>
+          <img src="/images/wizard-of-oz.gif" style="width:100%" onclick="onClick(this)"
+            alt="Wizard of Oz prototype being tested in class">
+          <h7>Wizard of Oz prototype being tested in class</h7>
+        </div>
+
+        <div class="w3-half">
+          <img src="/images/computer-vision.jpg" style="width:100%" onclick="onClick(this)"
+            alt="An example of computer vision from Meta, demonstrating the type of object recognition that could be processed within a system such as the one proposed">
+          <h7>An example of computer vision from Meta, demonstrating the type of object recognition that could be
+            processed within a system such as the one proposed</h7>
+        </div>
+      </div>
+
+
+      <!-- The Team -->
+      <!--     <div class="w3-row-padding w3-grayscale">
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="/w3images/team2.jpg" alt="John" style="width:100%">
+          <div class="w3-container">
+            <h3>John Doe</h3>
+            <p class="w3-opacity">CEO & Founder</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+              elementum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
+          <div class="w3-container">
+            <h3>Jane Doe</h3>
+            <p class="w3-opacity">Designer</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+              elementum.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col m4 w3-margin-bottom">
+        <div class="w3-light-grey">
+          <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
+          <div class="w3-container">
+            <h3>Mike Ross</h3>
+            <p class="w3-opacity">Architect</p>
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+              elementum.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+      <!-- User Testing -->
+      <div class="w3-container" id="User Testing" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>User Testing</b></h1>
+        <!--       <hr style="width:340px;border:5px solid #388E3C" class="w3-round"> -->
+        <h4>Recordings of user tests + findings</h4>
+
+        <div class="w3-container" id="Wizard of Oz" style="margin-top:75px">
+          <h1 class="w3-xxlarge w3-text-red"><b>Wizard of Oz</b></h1>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/77EwMDDNz7w" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/TOLrcMUUlXY" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Af3TOM474J8" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/suxtXGUOO40" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/U0a8US-sUW4" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <p>Testing conducted in-class with sighted participants.</p>
+        <p>They were blindfolded, handed the cane, then provided with instructions on how to use the cane. Their goal
+          was to navigate the classroom using the cane in a traditional manner and also with the sensor module.</p>
+        <p>This was a Wizard of Oz prototype, so the functionality of the device was faked using a custom soundboard
+          that stood in for the built-in haptics that would otherwise be providing feedback to the user.</p>
+
+        <div class="w3-container" id="Analysis" style="margin-top:75px">
+          <h1 class="w3-xxlarge w3-text-red"><b>Analysis</b></h1>
+        </div>
+
+        <!-- Table -->
+        <table>
+          <tr>
+            <th>Observation</th>
+            <th>Analysis</th>
+            <th>Next Steps</th>
+          </tr>
+          <tr>
+            <td>Each user holds the cane slightly differently</td>
+            <td>There’s a lack of wayfinding or orientation affordances in the artifact</td>
+            <td>Add affordances that can help users orient the cane properly and hold the handle in a way as to not
+              obscure sensors</td>
+          </tr>
+          <tr>
+            <td>Users are not as confident using the device in its folded state</td>
+            <td>They trust the tactile feedback of the cane hitting objects more than the electronic feedback of the
+              camera and are more hesitant to use it, they also don’t trust the feedback as much</td>
+            <td>Figure out how to replicate the ease of use of the cane’s original function or tie the two in more
+              directly so they don’t feel disconnected, folded state could be used more for situations where users are
+              seated or in confined spaces</td>
+          </tr>
+          <tr>
+            <td>After using the cane in both ways, some users remarked that they don’t understand why or when they would
+              want to use the augmented functionality instead of the traditional</td>
+            <td>Does the augmented functionality actually augment something or is it tacked on?</td>
+            <td>Find ways to make the experience more seamless so there’s less “switching” as users explore their
+              environment with the device</td>
+          </tr>
+        </table>
+
+      </div>
+
+      <!--     <div class="w3-row-padding">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+          <li class="w3-padding-16">Floorplanning</li>
+          <li class="w3-padding-16">10 hours support</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">20% furniture discount</li>
+          <li class="w3-padding-16">Good deals</li>
+          <li class="w3-padding-16">
+            <h2>$ 199</h2>
+            <span class="w3-opacity">per room</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+          <li class="w3-padding-16">Floorplanning</li>
+          <li class="w3-padding-16">50 hours support</li>
+          <li class="w3-padding-16">Photography</li>
+          <li class="w3-padding-16">50% furniture discount</li>
+          <li class="w3-padding-16">GREAT deals</li>
+          <li class="w3-padding-16">
+            <h2>$ 249</h2>
+            <span class="w3-opacity">per room</span>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+
+      <!-- Reflection -->
+      <div class="w3-container" id="Reflection" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Reflection</b></h1>
+        <!--       <hr style="width:240px;border:5px solid #388E3C" class="w3-round"> -->
+        <h4>Lessons learned from this project + possible next steps</h4>
+
+        <!-- Photo grid (modal) -->
+        <div class="w3-row-padding">
+          <div class="w3-half">
+            <img src="/images/schedule_1.png" style="width:100%" onclick="onClick(this)"
+              alt="The beginning of the semester">
+            <h7>The beginning of the semester</h7>
+            <img src="/images/schedule_2.png" style="width:100%" onclick="onClick(this)" alt="The end of the semester">
+            <h7>The end of the semester</h7>
+          </div>
+        </div>
+
+        <p>I knew that this project would end up being expansive from the moment I started planning it. Thesis was
+          something that I’ve thought about endlessly since my first day in this program and I’ve spent that whole time
+          building up ideas for what topics I wanted to explore and how I wanted to structure the entire project. I’ve
+          always viewed myself as a multidisciplinary designer and I knew early on that I wanted my thesis project to
+          reflect that.</p>
+        <p>That’s the main insight that I’ve gained after I had a chance to reflect on the entire experience. I’d spent
+          so much time in previous years thinking about the dimensions I could add to my project that even though I
+          didn’t explicitly plan a multidisciplinary approach at the beginning of last semester, the project morphed
+          into that anyway. I ended up drawing on many of the experiences that I’ve gained throughout the program,
+          ranging from visual design to research, user testing, physical computing, speculative design, prototyping,
+          coding, and much more. Thesis also served as an opportunity to further explore skills that I’d just started to
+          learn or hadn’t had a chance to yet. I’m content with this because to me it means that I’ve internalized
+          enough of the traits and skills I knew I needed to become a multidisciplinary designer that it’s now an
+          automatic background process. I’ve reached critical mass with this endeavour, I don’t have to explicitly train
+          or study for it anymore. I’ve built up the unconscious processes and habits to operate this way. I’ve faked it
+          enough to make it, and now I get to make it again and again.</p>
+        <p>Another insight that I uncovered towards the end of thesis was just how collaborative this project ended up
+          being and how much I’ve progressed with my social anxiety, public speaking, empathy, and other interpersonal
+          skills in these past few years that I was able to successfully seek out collaborators to help me pull this off
+          while juggling everything else that was going on in my day-to-day life. I never pictured that part of it when
+          I tried to imagine what working away at a year-long thesis project would be like in 1st year. I didn’t realize
+          that I’ve been making good progress with my interpersonal skills as well this whole time, from interacting
+          with faculty and students at Sheridan as part of my IxDA duties to networking with professionals at large
+          design events. Once again this part of the project became almost an automatic process for me as I had already
+          built not only the habits but also the networks to seek out compatible collaborators who I knew would be able
+          to help me bring my thesis up a notch.</p>
+        <p>Despite all this, there remain quite a few areas of improvement that I need to keep working on as I
+          transition away from a student towards a junior or senior designer. I’ve learned that while my time/project
+          management has improved lately, it needs to be even better if I intend on pursuing projects of this nature or
+          collaborating at a larger scale in the future. The planning that I did for myself was somewhat effective, but
+          I still ran out of time and resources on more than one occasion. I had to adjust my scope multiple times
+          throughout the year, and not always because I had made progress or found insight, but rather because what I
+          was trying to do was no longer feasible with my time and resources. I also came face-to-face with more risks
+          than I thought I would. Things like not having enough people to test my prototypes with, technology problems
+          (things like 3D scanning and printing not panning out as I’d hoped), and illness that would push back my
+          schedule by a week or more. The final insight that I learned near the final stages of the project was how
+          important strong presentations were, and how much I’d been neglecting that. I thought like a designer and thus
+          believed that any fellow designer would immediately understand my project and have a positive perception of
+          it. I learned that not only is this an unrealistic expectation towards designers, but that non-designers (or
+          really anyone previously unfamiliar with my project) would have an even harder time understanding what I was
+          doing. It wouldn’t be enough to just throw all my research and process up on the screen and guide them through
+          a chronological summary of it. I had to take the time to understand my audience and cater the content towards
+          them. I had to find a format/framework to organize my work with and craft a narrative that would familiarize a
+          new audience to my ideas, processes, research, and goals rather than alienating them.</p>
+        <p>Going back to my project planning, I think that ultimately it provide me with the opportunity to gracefully
+          wrap up this project at the end when I felt like I was running on fumes and had begun to lost sight of why I
+          wanted to do this project in the first place. My initial planning around having a roadmap and several
+          milestones or tiers I could reach ensured that I could pick the most feasible one in the final weeks of the
+          semester and aim to have my project done according to those success metrics instead of letting myself burn
+          out.</p>
+
+        <!--       <form action="/action_page.php" target="_blank">
+        <div class="w3-section">
+          <label>Name</label>
+          <input class="w3-input w3-border" type="text" name="Name" required>
+        </div>
+        <div class="w3-section">
+          <label>Email</label>
+          <input class="w3-input w3-border" type="text" name="Email" required>
+        </div>
+        <div class="w3-section">
+          <label>Message</label>
+          <input class="w3-input w3-border" type="text" name="Message" required>
+        </div>
+        <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send
+          Message</button>
+      </form> -->
+      </div>
+
+      <!-- Appendix -->
+      <div class="w3-container" id="Appendix" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-red"><b>Appendix</b></h1>
+        <h4>All my work since September 2022 that informed the direction of this project, including all citations and
+          references</h4>
+
+        <a
+          href="https://arash-nouri.notion.site/Interaction-Design-Studies-1-Sprint-2-845148707e814112bd20812885e5cab9">Interaction
+          Design Studies 1: Sprint 2</a>
+        <br>
+        <a href="https://arash-nouri.notion.site/Project-1-Project-Proposal-f4bd8eb9a184474e966cc1f7fe28429e">Interaction
+          Design Studies 2: Project Proposal</a>
+        <br>
+        <a href="https://arash-nouri.notion.site/Project-2-Design-Research-8169c745a67b41f3acf5d8b37e3160a8">Interaction
+          Design Studies 2: Design Research</a>
+        <br>
+        <a href="https://arash-nouri.notion.site/Project-3-Development-Phase-1-bce5e63cb0934389a5cfa589343459d5">Interaction
+          Design Studies 2: Development Phase 1</a>
+        <br>
+        <a href="https://arash-nouri.notion.site/Project-1-Project-Proposal-5fe00405cf824afeaad22b3ec56748c8">Computation
+          Studio: Project Proposal</a>
+        <br>
+        <a href="https://arash-nouri.notion.site/Project-2A-bd50c61bbf3f44a5978c906b7abb1b18">Computation Studio:
+          Prototype 2A</a>
+        <br>
+        <a href="https://arash-nouri.notion.site/Project-2B-d4f28c39639e49e4b3fe7a6c83608464">Computation Studio:
+          Prototype 2B</a>
+
+
+
+      </div>
+
+      <!-- End page content -->
+    </div>
+
+    <!-- W3.CSS Container -->
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+      <p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
+          target="_blank" class="w3-hover-opacity">w3.css</a></p>
+    </div>
+
+    <script>
+      // Script to open and close sidebar
+      function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+
+      function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
+
+      // Accordion 
+      function myAccFunc() {
+        var x = document.getElementById("demoAcc");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+
+</body>
+
+</html>
